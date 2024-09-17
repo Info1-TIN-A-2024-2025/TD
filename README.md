@@ -22,6 +22,8 @@ Mode opératoire : sur ordinateur ; vous **devez** amener votre ordinateur perso
 
 ## Examen
 
+- session 3.II.2025 au 9.II.2025
+
 Les notes obtenues à l'exmane compte pour 50% de la note finale
 
 Mode opératoire : sur papier uniquement.
