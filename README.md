@@ -9,8 +9,8 @@ Mode opératoire : sur ordinateur ; vous **devez** amener votre ordinateur perso
 
 ## Tests écrits
 
-- TE1 : 4 décembre 2024, 12.5% de la note finale
-- TE2 : 15 janvier 2025, 12.5% de la note finale
+- TE1 : 4.XII.2024, 12.5% de la note finale
+- TE2 : 15.I.2025, 12.5% de la note finale
 
 Mode opératoire : sur ordinateur ; vous **devez** amener votre ordinateur personnel pour les TE.
 
