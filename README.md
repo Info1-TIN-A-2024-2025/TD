@@ -16,7 +16,7 @@ Mode opératoire : sur ordinateur ; vous **devez** amener votre ordinateur perso
 
 ## Travaux de laboratoires
 
-Les notes obtenues aux travaux de laboratoires comptent pour 25% de la note finale
+Les notes obtenues aux travaux de laboratoires comptent pour 25% de la note finale.
 
 Mode opératoire : sur ordinateur ; vous **devez** amener votre ordinateur personnel pour les labos.
 
@@ -24,6 +24,6 @@ Mode opératoire : sur ordinateur ; vous **devez** amener votre ordinateur perso
 
 - session 3.II.2025 au 9.II.2025
 
-Les notes obtenues à l'exmane compte pour 50% de la note finale
+La note obtenue à l'examen compte pour 50% de la note finale.
 
 Mode opératoire : sur papier uniquement.
