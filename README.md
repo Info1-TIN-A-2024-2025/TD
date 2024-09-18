@@ -54,7 +54,7 @@ Mode opératoire : sur papier uniquement.
 
 - cours en ligne : https://heig-tin-info.github.io/handbook/
 
-## Ouils informatiques
+## Outils informatiques
 
 - Teams https://teams.microsoft.com/l/channel/19%3AKDgXGo5OSNW2p4UJm2MSYQGaUORUqR2uz9x6sSBZUqg1%40thread.tacv2/General?groupId=c4ab57a6-0bb9-4428-8c97-30c3584ae840&tenantId=a372f724-c0b2-4ea0-abfb-0eb8c6f84e40
 - Github
