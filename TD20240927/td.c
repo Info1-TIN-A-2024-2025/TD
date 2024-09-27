@@ -12,7 +12,8 @@ int main(int argc, const char *argv[])
 	//c = 0.5;
 
 	printf("Enter a: ");
-	scanf("%lf", &a);   // important: %lf (double),  &a (emplacement de la variable a en mémoire)
+	scanf("%lf", &a);   // keyboard input,
+	// important: %lf (double),  &a (address of the variable a in memory)
 
 	printf("Enter b: ");
 	scanf("%lf", &b);
@@ -22,7 +23,7 @@ int main(int argc, const char *argv[])
 
 	r = a * b * c;
 
-	printf("%lf\n", r);
+	printf("%lf\n", r); // output the result ; \n = new line in the terminal
 
 	return 0;
 }
