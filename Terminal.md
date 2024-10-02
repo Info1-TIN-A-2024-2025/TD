@@ -97,3 +97,14 @@ history
 
 
 
+## Add the current directory to git
+
+precondition: the current directory is the one we want to add
+```bash
+git add .
+git commit -am "added directory xxx"
+git push
+```
+
+
+
