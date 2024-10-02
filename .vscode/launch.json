@@ -5,17 +5,27 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "launcher",
+            "name": "Launch (lldb)",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${fileDirname}/app",
-            "args": [
-                "10",
-                "20",
-                "+"
-            ],
+            "program": "/workspaces/TD/TD202040927/app",
+            "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false
+        }
+,    
+        {
+            "name": "td",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/workspaces/TD/TD202040927/app",
+            "args": [
+                "123", "456"
+            ],
+            "stopAtEntry": false,
+            "cwd": "/workspaces/TD/TD202040927/",
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
