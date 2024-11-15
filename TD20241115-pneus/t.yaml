@@ -1,0 +1,183 @@
+version: 1
+filters:
+  trim: true
+  lowercase: true
+  ignorespaces: true
+
+tests:
+  - name: Number of arguments check
+    tests:
+    - name: more than two arguments 
+      args: ["-h", "225/55R17", "1234.5"]
+      stdin: 
+      stdout:
+        - contains: "error"
+      exit: 2
+    - name: more than two arguments
+      args: ["225/55R17", "1234.5", "-h"]
+      stdin: 
+      stdout:
+        - contains: "error"
+      exit: 2
+    - name: less than two arguments
+      args: ["1"]
+      stdin: 
+      stdout:
+        - contains: "error"
+      exit: 1
+    - name: less than two arguments
+      args: []
+      stdin: 
+      stdout:
+        - contains: "error"
+      exit: 1
+
+  - name: Validity of arguments check
+    tests:
+    - name: distance NaN
+      args: ["225/55R17", "XXX"]
+      stdin: 
+      stdout:
+        - contains: "error"
+      exit: 4
+    - name: distance <0
+      args: ["225/55R17", "-.1"]
+      stdin: 
+      stdout:
+        - contains: "error"
+      exit: 4
+    - name: distance =0 (int)
+      args: ["225/55R17", "0"]
+      stdin: 
+      stdout:
+        - contains: "error"
+      exit: 4
+    - name: distance =0 (real)
+      args: ["225/55R17", "0."]
+      stdin: 
+      stdout:
+        - contains: "error"
+      exit: 4
+    - name: bad tyre ref (width NaN)
+      args: ["X/55R17", "1.0"]
+      stdin: 
+      stdout:
+        - contains: "error"
+      exit: 4
+    - name: bad tyre ref (width<0)
+      args: ["-225/55R17", "1.0"]
+      stdin: 
+      stdout:
+        - contains: "error"
+      exit: 4
+    - name: bad tyre ref (width =0)
+      args: ["0/55R17", "1.0"]
+      stdin: 
+      stdout:
+        - contains: "error"
+      exit: 4
+    - name: bad tyre ref (width real)
+      args: ["0.1/55R17", "1.0"]
+      stdin: 
+      stdout:
+        - contains: "error"
+      exit: 4
+    - name: bad tyre ref (ratio NaN)
+      args: ["225/yR17", "1.0"]
+      stdin: 
+      stdout:
+        - contains: "error"
+      exit: 4
+    - name: bad tyre ref (ratio <0)
+      args: ["225/-55R17", "1.0"]
+      stdin: 
+      stdout:
+        - contains: "error"
+      exit: 4
+    - name: bad tyre ref (ratio =0)
+      args: ["225/0R17", "1.0"]
+      stdin: 
+      stdout:
+        - contains: "error"
+      exit: 4
+    - name: bad tyre ref (ratio real)
+      args: ["225/0.1R17", "1.0"]
+      stdin: 
+      stdout:
+        - contains: "error"
+      exit: 4
+    - name: bad tyre ref (diameter NaN)
+      args: ["225/55Rz", "1.0"]
+      stdin: 
+      stdout:
+        - contains: "error"
+      exit: 4
+    - name: bad tyre ref (diameter <0)
+      args: ["225/55R-17", "1.0"]
+      stdin: 
+      stdout:
+        - contains: "error"
+      exit: 4
+    - name: bad tyre ref (diameter =0)
+      args: ["225/55R0", "1.0"]
+      stdin: 
+      stdout:
+        - contains: "error"
+      exit: 4
+    - name: bad tyre ref (diameter real)
+      args: ["225/55R0.1", "1.0"]
+      stdin: 
+      stdout:
+        - contains: "error"
+      exit: 4
+    - name: bad tyre ref (incorrect separator /)
+      args: ["225(55R17", "1.0"]
+      stdin: 
+      stdout:
+        - contains: "error"
+      exit: 4
+    - name: bad tyre ref (incorrecte separator R)
+      args: ["225/55T17", "1.0"]
+      stdin: 
+      stdout:
+        - contains: "error"
+      exit: 4
+
+  - name: Nominal tests
+    tests:
+    - name: Le Caire - Yverdon
+      args: ["225/40R18", "4893"]
+      stdin: 
+      stdout:
+        - contains: "63.72cm"
+        - contains: "2.00m"
+        - contains: "2444272.2"
+      exit: 0
+    - name: Lausanne - Yverdon
+      args: ["195/55R15", "38"]
+      stdin: 
+      stdout:
+        - contains: "59.55cm"
+        - contains: "1.87m"
+        - contains: "20312.0"
+      exit: 0
+    - name: Paris - Le Havre
+      args: ["225/55R17", "202.1"]
+      stdin: 
+      stdout:
+        - contains: "67.93cm"
+        - contains: "2.13m"
+        - contains: "94701.1"
+      exit: 0
+
+  - name: help option check
+    tests:
+    - name: option -h
+      args: ["-h"]
+      stdin: 
+      stdout:
+        - contains: "usage"
+        - contains: "-h"
+        - contains: "tire"
+        - contains: "distance"
+      exit: 0
