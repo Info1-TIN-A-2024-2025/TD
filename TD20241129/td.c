@@ -119,7 +119,7 @@ int main(int argc, const char *argv[])
 	g(&r); // g(adresse de la variable r); -> dans g, l'adresse de la variable r est connue ; 
 			// g peut modifier r
 #endif
-
+// 
 	return 0;
 }
 
