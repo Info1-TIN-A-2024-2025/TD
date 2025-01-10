@@ -44,6 +44,9 @@ int change_word(const char s1[], const char w1[], char s2[], const char w2[]) {
 
 int main(int argc, const char *argv[])
 {
+	char xx=42;
+	printf("%d\n", sizeof(xx));
+	printf("%d\n", sizeof(xx>>1));
 #if 1
 	const char *s = "il-fait-beau-et-chaud.La mer monte.Le chat/est/gris";
 	const char *sep = "- ./";
